@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+    crossorigin="anonymous">
+    <script src='main.js'></script>
+</head>
+<body>
+        <div class="container">
+            hola
+                <div class="row">
+                        {% for dato in data%}
+                        <div class="col-lg-4 offset-lg-4">
+                            <div class="media">
+                                <img class="mr-3 rounded-circle" src="{{dato.user.picture}}" alt="{{dato.user.name}}">
+                                <div class="media-nody">
+                                    <h5 class="mt-0">{{dato.user.name}}</h5>
+                                    {{dato.timestamp}}
+                                </div>
+                            </div>
+                            <img class="img-fluid mt-3 border rounded" src="{{ dato.photo }}" alt="{{  dato.title }}">
+                                <h6 class="ml-l mt-l">{{ dato.title }}</h6>
+                        </div>
+                        {%endfor%}
+                </div>           
+        </div>
+</body>
+</html>
+
